@@ -1,0 +1,776 @@
+/* ==============================
+   BASIC RESET
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #fffafa;
+    color: #292225;
+    overflow-x: hidden;
+}
+
+
+/* ==============================
+   HEADER
+============================== */
+
+.topbar {
+    width: 100%;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-bottom: 1px solid #f5e6e9;
+
+    position: relative;
+    z-index: 20;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #e85d75;
+    font-size: 19px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #75666a;
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.25s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #df526b;
+}
+
+
+/* ==============================
+   HERO
+============================== */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 70px 20px;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 15% 30%,
+            rgba(255, 207, 217, 0.35),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(255, 225, 231, 0.45),
+            transparent 25%
+        ),
+        #fffafa;
+}
+
+
+/* ==============================
+   MAIN CARD
+============================== */
+
+.main-card {
+    width: min(700px, 100%);
+
+    padding: 65px 55px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 1px solid #f4dfe4;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 25px 70px rgba(170, 95, 110, 0.10);
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.small-label {
+    color: #df5b73;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+}
+
+.main-card h1,
+.inner-hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(45px, 7vw, 75px);
+
+    line-height: 1.05;
+
+    font-weight: 700;
+}
+
+.main-card h1 span,
+.inner-hero h1 span {
+    color: #df526c;
+}
+
+.hero-text {
+    max-width: 500px;
+
+    margin: 25px auto;
+
+    color: #796d71;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* ==============================
+   SURPRISE BUTTON
+============================== */
+
+.surprise-btn {
+    border: none;
+
+    background: #e45a72;
+
+    color: white;
+
+    padding: 15px 27px;
+
+    border-radius: 50px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(228, 90, 114, 0.25);
+
+    transition:
+        transform 0.25s,
+        box-shadow 0.25s;
+}
+
+.surprise-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(228, 90, 114, 0.32);
+}
+
+.surprise-btn:active {
+    transform: scale(0.96);
+}
+
+.card-bottom {
+    margin-top: 30px;
+
+    color: #b39ca2;
+
+    font-size: 12px;
+}
+
+
+/* ==============================
+   DECORATIVE HEARTS
+============================== */
+
+.hero-decoration {
+    position: absolute;
+
+    color: #f4a4b3;
+
+    font-size: 40px;
+
+    opacity: 0.5;
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+.heart-one {
+    left: 12%;
+    top: 25%;
+}
+
+.heart-two {
+    right: 13%;
+    bottom: 25%;
+
+    font-size: 28px;
+
+    animation-delay: 1s;
+}
+
+@keyframes floating {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(8deg);
+    }
+
+}
+
+
+/* ==============================
+   SECTIONS
+============================== */
+
+.cards-section,
+.content-section {
+    width: min(1100px, 90%);
+
+    margin: auto;
+
+    padding: 80px 0;
+}
+
+.section-heading {
+    margin-bottom: 35px;
+}
+
+.section-heading span {
+    color: #df6076;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+}
+
+.section-heading h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 34px;
+
+    margin-top: 8px;
+}
+
+
+/* ==============================
+   SMALL CARDS
+============================== */
+
+.cards-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.info-card {
+    background: white;
+
+    border: 1px solid #f2e2e5;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    min-height: 140px;
+
+    position: relative;
+
+    transition:
+        transform 0.25s,
+        box-shadow 0.25s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(160, 80, 100, 0.09);
+}
+
+.card-icon {
+    min-width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #fff0f3;
+
+    border-radius: 15px;
+
+    font-size: 23px;
+}
+
+.info-card h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 20px;
+
+    margin-bottom: 6px;
+}
+
+.info-card p {
+    color: #817478;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    padding-right: 20px;
+}
+
+.card-arrow {
+    position: absolute;
+
+    right: 20px;
+
+    bottom: 18px;
+
+    color: #dd6377;
+
+    font-size: 18px;
+}
+
+
+/* ==============================
+   SECOND PAGE HERO
+============================== */
+
+.inner-hero {
+    text-align: center;
+
+    padding: 110px 20px 80px;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255, 212, 220, 0.45),
+            transparent 35%
+        );
+}
+
+.inner-hero p {
+    margin-top: 20px;
+
+    color: #807478;
+
+    font-size: 16px;
+}
+
+
+/* ==============================
+   LETTER
+============================== */
+
+.letter-card {
+    max-width: 850px;
+
+    margin: auto;
+
+    background: white;
+
+    border: 1px solid #f0dfe3;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 50px rgba(170, 95, 110, 0.08);
+}
+
+.letter-top {
+    height: 65px;
+
+    background: #fff3f5;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 25px;
+
+    color: #df6176;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+.letter-content {
+    padding: 50px 65px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 17px;
+
+    line-height: 2;
+
+    color: #55484c;
+}
+
+.letter-content p {
+    margin-bottom: 22px;
+}
+
+.letter-greeting {
+    color: #dc536c;
+
+    font-size: 22px;
+}
+
+.letter-ending {
+    margin-top: 35px;
+}
+
+
+/* ==============================
+   BIG CARDS
+============================== */
+
+.big-info-card {
+    background: white;
+
+    border: 1px solid #f2e2e5;
+
+    border-radius: 22px;
+
+    padding: 35px;
+
+    min-height: 250px;
+
+    transition: 0.25s;
+}
+
+.big-info-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(160, 80, 100, 0.09);
+}
+
+.big-icon {
+    font-size: 30px;
+
+    margin-bottom: 20px;
+}
+
+.big-info-card h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.big-info-card p {
+    color: #817478;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+.outline-btn {
+    background: transparent;
+
+    border: 1px solid #e8a0ae;
+
+    color: #d95770;
+
+    border-radius: 30px;
+
+    padding: 9px 16px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    font-size: 12px;
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    text-align: center;
+
+    padding: 70px 20px;
+
+    border-top: 1px solid #f4e3e6;
+
+    color: #8d7d82;
+}
+
+.footer-heart {
+    color: #e45a72;
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+footer p {
+    font-family: "Playfair Display", serif;
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+footer small {
+    font-size: 11px;
+
+    color: #b19da3;
+}
+
+
+/* ==============================
+   FALLING CELEBRATION
+============================== */
+
+#celebration {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    overflow: hidden;
+}
+
+.falling-item {
+    position: absolute;
+
+    top: -70px;
+
+    font-size: 25px;
+
+    animation:
+        fall linear forwards;
+
+    will-change: transform;
+}
+
+@keyframes fall {
+
+    0% {
+        transform:
+            translateY(-70px)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0.1;
+    }
+
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 700px) {
+
+    .topbar {
+        height: 62px;
+
+        padding: 0 6%;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 600px;
+
+        padding: 40px 15px;
+    }
+
+    .main-card {
+        padding: 45px 23px;
+
+        border-radius: 22px;
+    }
+
+    .main-card h1,
+    .inner-hero h1 {
+        font-size: 43px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .hero-decoration {
+        display: none;
+    }
+
+    .cards-section,
+    .content-section {
+        width: 88%;
+
+        padding: 60px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 29px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .info-card {
+        min-height: 125px;
+
+        padding: 20px;
+    }
+
+    .card-icon {
+        min-width: 45px;
+
+        width: 45px;
+        height: 45px;
+
+        font-size: 20px;
+    }
+
+    .info-card h3 {
+        font-size: 18px;
+    }
+
+    .info-card p {
+        font-size: 12px;
+    }
+
+    .inner-hero {
+        padding: 75px 20px 55px;
+    }
+
+    .letter-content {
+        padding: 35px 25px;
+
+        font-size: 15px;
+
+        line-height: 1.9;
+    }
+
+    .letter-greeting {
+        font-size: 20px;
+    }
+
+    .big-info-card {
+        min-height: auto;
+
+        padding: 27px;
+    }
+
+}
+
+
+/* ==============================
+   VERY SMALL PHONES
+============================== */
+
+@media (max-width: 400px) {
+
+    nav {
+        gap: 9px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .main-card h1,
+    .inner-hero h1 {
+        font-size: 37px;
+    }
+
+    .main-card {
+        padding: 40px 18px;
+    }
+
+      }
